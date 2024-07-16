@@ -8,11 +8,46 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-  Hello world
+  <body>
+      <header>
+          <div class="logo">
+              <h1>NSV DESIGNS</h1>
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="products.html">Products</a></li>
+                  <li><a href="cart.html">Cart</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </nav>
+      </header>
 
-  
-  <script src="script.js"></script>
-</body>
+      <main>
+          <section class="hero">
+              <h2>Welcome to NSV DESIGNS</h2>
+              <p>Discover the latest fashion trends.</p>
+              <a href="products.html" class="btn">Shop Now</a>
+          </section>
+
+      </main>
+
+      <footer>
+          <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
+      </footer>
+  </body>
+
+  <script>
+      let cart = []
+
+      function addToCart(product) {
+          cart.push(product)
+          alert(product.name + " has been added to your cart!")
+      };
+
+      function viewCart() {
+          console.log(cart)
+      };
+  </script>
 
 </html>

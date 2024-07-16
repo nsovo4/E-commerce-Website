@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing</title>
+
+  <style>
+    body {
+      width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    header {
+        background-color: #fff;
+        color: #000;
+        padding: 50px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    nav li a.active {
+      color: orange;
+    }
+
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sale-item {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+    }
+
+    .sale-item img {
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .sale-item h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .sale-item p {
+        margin-top: 10px;
+    }
+
+    .sale-item button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .sale-item button:hover {
+        background-color: #45a049;
+    }
+
+    .container {
+      display: flex;
+      gap: 50px;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+    <!-- Header -->
+   <!-- Header -->
+<header>
+    <h1>Clothing</h1>
+    <nav>
+      <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+</header>
+
+    <!-- Main Content -->
+    <body>
+        <!-- Home Page Pictures -->
+        
+        <div class="main-content">
+            <div class="sale-item">
+                <img src="a spirit.png" alt="Item 1">
+                <h2>Blue Men Shirt</h2>
+                <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+                <p><strong>Price:</strong> R350</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="dice.png" alt="Item 2">
+                <h2>Men Shirt</h2>
+                <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R750</p>
+                <p><strong>Sale Price:</strong> R400</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="heart d.png" alt="Item 3">
+                <h2>Kakhi Men Shirt</h2>
+                <p>Get this stunning kakhi shirt at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R900</p>
+                <p><strong>Sale Price:</strong> R550</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="heart print.png" alt="Item 4">
+                <h2>Green Men Pants</h2>
+                <p>Get these stunning pants at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R850</p>
+                <p><strong>Sale Price:</strong> R600</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="hustlers dept.png" alt="Item 5">
+                <h2>Kakhi Woman Pants</h2>
+                <p>Get these stunning pants at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R980</p>
+                <p><strong>Sale Price:</strong> R650</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="inhale.png" alt="Item 6">
+                <h2>Black Men Pants</h2>
+                <p>Get these stunning pants at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R1000</p>
+                <p><strong>Sale Price:</strong> R710</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="mengelara.png" alt="Item 7">
+                <h2>Black Pants</h2>
+                <p>Get these stunning pants at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R850</p>
+                <p><strong>Sale Price:</strong> R470</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="need weed.png" alt="Item 8">
+                <h2>Pink Women Shirt</h2>
+                <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R550</p>
+                <p><strong>Sale Price:</strong> R270</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+            <div class="sale-item">
+                <img src="pazel.png" alt="Item 1">
+                <h2>Red Men Shirt</h2>
+                <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+                <p><strong>Original Price:</strong> R650</p>
+                <p><strong>Sale Price:</strong> R410</p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product" value="Clothing">
+                    <input type="hidden" name="price" value="210">
+                    <button type="submit" name="add_to_cart">Add to Cart</button>
+                </form>
+            </div>
+
+          <div class="sale-item">
+              <img src="pill.png" alt="Item 1">
+              <h2>Red Men Shirt</h2>
+              <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+              <p><strong>Original Price:</strong> R650</p>
+              <p><strong>Sale Price:</strong> R410</p>
+              <form method="post" action="cart.php">
+                  <input type="hidden" name="product" value="Clothing">
+                  <input type="hidden" name="price" value="210">
+                  <button type="submit" name="add_to_cart">Add to Cart</button>
+              </form>
+          </div>
+
+          <div class="sale-item">
+              <img src="smiley.png" alt="Item 1">
+              <h2>Red Men Shirt</h2>
+              <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+              <p><strong>Original Price:</strong> R650</p>
+              <p><strong>Sale Price:</strong> R410</p>
+              <form method="post" action="cart.php">
+                  <input type="hidden" name="product" value="Clothing">
+                  <input type="hidden" name="price" value="210">
+                  <button type="submit" name="add_to_cart">Add to Cart</button>
+              </form>
+          </div>
+
+          <div class="sale-item">
+              <img src="think.png" alt="Item 1">
+              <h2>Red Men Shirt</h2>
+              <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+              <p><strong>Original Price:</strong> R650</p>
+              <p><strong>Sale Price:</strong> R410</p>
+              <form method="post" action="cart.php">
+                  <input type="hidden" name="product" value="Clothing">
+                  <input type="hidden" name="price" value="210">
+                  <button type="submit" name="add_to_cart">Add to Cart</button>
+              </form>
+          </div>
+
+          <div class="sale-item">
+              <img src="u decide.png" alt="Item 1">
+              <h2>Red Men Shirt</h2>
+              <p>Get this stunning shirt at a discounted price. Limited time offer!</p>
+              <p><strong>Original Price:</strong> R650</p>
+              <p><strong>Sale Price:</strong> R410</p>
+              <form method="post" action="cart.php">
+                  <input type="hidden" name="product" value="Clothing">
+                  <input type="hidden" name="price" value="210">
+                  <button type="submit" name="add_to_cart">Add to Cart</button>
+              </form>
+          </div>
+        <!-- Insert other main content here -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
