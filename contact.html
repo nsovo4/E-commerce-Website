@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Cart</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contact</title>
 
-  <style>
+    <style>
     body {
       width: 100%;
       overflow-x: hidden;
@@ -108,73 +108,26 @@
     }
 
   </style>
-  
-</head>
+
+  </head>
 
   <body>
     <header>
-            <h1>NSV DESIGNS</h1>
+            <h1>CONTACTS</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
-                <li><a class="active" href="cart.html">Cart</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-
-    <main id="cart">
-        <!-- Cart items will be displayed here -->
-    </main>
 
     <footer>
         <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
     </footer>
 
-    <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        function updateQuantity(name, quantity) {
-            const productIndex = cart.findIndex(item => item.name === name);
-            if (productIndex > -1) {
-                if (quantity <= 0) {
-                    cart.splice(productIndex, 1); // Remove item if quantity is zero or less
-                } else {
-                    cart[productIndex].quantity = quantity;
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                viewCart();
-            }
-        }
-
-        function removeFromCart(name) {
-            cart = cart.filter(item => item.name !== name);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            viewCart();
-        }
-
-        function viewCart() {
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartHTML = '<h2>Your Cart</h2><ul>';
-
-            cartItems.forEach(item => {
-                cartHTML += `
-                    <li>
-                        <img src="${item.image}" alt="${item.name}" width="50">
-                        ${item.name} - $${item.price} x 
-                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', this.value)">
-                        <button onclick="removeFromCart('${item.name}')">Remove</button>
-                    </li>`;
-            });
-
-            cartHTML += '</ul>';
-            document.getElementById('cart').innerHTML = cartHTML;
-        }
-
-        // Call viewCart when the page loads
-        viewCart();
-    </script>
   </body>
-  </html>
+</html>
