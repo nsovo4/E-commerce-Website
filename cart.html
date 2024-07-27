@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Cart</title>
+  <title>Cart - NSV DESIGNS</title>
 
   <style>
     body {
@@ -100,7 +100,7 @@
     footer {
         background-color: #333;
         color: #fff;
-        padding: 10px 20px;
+        padding: 5px 0;
         text-align: center;
         bottom: 0;
         width: 100%;
@@ -136,8 +136,8 @@
     <script>
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        function updateQuantity(name, quantity) {
-            const productIndex = cart.findIndex(item => item.name === name);
+        function updateQuantity(name, image, quantity) {
+            const productIndex = cart.findIndex(item => item.name === name && item.image === image);
             if (productIndex > -1) {
                 if (quantity <= 0) {
                     cart.splice(productIndex, 1); // Remove item if quantity is zero or less
@@ -149,8 +149,8 @@
             }
         }
 
-        function removeFromCart(name) {
-            cart = cart.filter(item => item.name !== name);
+        function removeFromCart(name, image) {
+            cart = cart.filter(item => item.name !== name || item.image !== image);
             localStorage.setItem('cart', JSON.stringify(cart));
             viewCart();
         }
@@ -163,9 +163,9 @@
                 cartHTML += `
                     <li>
                         <img src="${item.image}" alt="${item.name}" width="50">
-                        ${item.name} - $${item.price} x 
-                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', this.value)">
-                        <button onclick="removeFromCart('${item.name}')">Remove</button>
+                        ${item.name} - ${item.price} x 
+                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', '${item.image}', this.value)">
+                        <button onclick="removeFromCart('${item.name}', '${item.image}')">Remove</button>
                     </li>`;
             });
 

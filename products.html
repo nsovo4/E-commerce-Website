@@ -3,304 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Products</title>
+    <title>Products - NSV DESIGNS</title>
+  
+    <style>
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2222;
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #2222;
-      scroll-behavior: smooth;
-    }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 50px 20px;
+        }
 
-    header {
-        background-color: #333;
-        color: #fff;
-        padding: 50px 20px;
-    }
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
 
-    header h1 {
-        margin: 0;
-        text-align: center;
-    }
+        nav ul {
+            list-style-type: none;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 20px;
-      padding: 0;
-      text-align: center;
-    }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
 
-    nav ul li a {
-        text-decoration: none;
-        color: #fff;
-    }
+        nav li a.active {
+            color: orange;
+        }
 
-    nav li a.active {
-      color: orange;
-    }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-    .main-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+        .sale-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .sale-item {
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin: 20px;
-        padding: 20px;
-        width: 300px;
-    }
+        .sale-item img {
+            width: 100%;
+            border-radius: 5px;
+            transition: opacity 0.5s ease-in-out;
+        }
 
-    .sale-item img {
-        width: 100%;
-        border-radius: 5px;
-    }
+        .sale-item img.second {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
 
-    .sale-item h2 {
-        font-size: 20px;
-        margin-top: 10px;
-    }
+        .sale-item:hover img.first {
+            opacity: 0;
+        }
 
-    .sale-item p {
-        margin-top: 10px;
-    }
+        .sale-item:hover img.second {
+            opacity: 1;
+        }
 
-    .sale-item button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
+        .sale-item h2 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
 
-    .sale-item button:hover {
-        background-color: #45a049;
-    }
+        .sale-item p {
+            margin-top: 10px;
+        }
 
-    .container {
-      display: flex;
-      gap: 50px;
-    }
+        .sale-item button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px 20px;
-        text-align: center;
-        bottom: 0;
-        width: 100%;
-        position: fixed;
-    }
+        .sale-item button:hover {
+            background-color: #45a049;
+        }
 
-  </style>
-
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 0;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+        }
+    </style>
 </head>
-
-
 <body>
     <!-- Header -->
-   <!-- Header -->
-<header>
-    <h1>Clothing</h1>
-    <nav>
-      <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="products.html">Products</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-</header>
+    <header>
+        <h1>Clothing</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Main Content -->
-    <body>
-        <!-- Home Page Pictures -->
-        
-        <div class="main-content">
-            <div class="sale-item">
-                <img src="a spirit.png" alt="Item 1">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "A spirit learning to be human" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      ('a spirit.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+    <div class="main-content">
+        <div class="sale-item">
+            <img src="a spirit.png" alt="Item 1" class="first">
+            <img src="a_spirit_alt.png" alt="Item 1 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "A spirit learning to be human" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('a_spirit.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="dice.png" alt="Item 2">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Dice Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (dice.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="dice.png" alt="Item 2" class="first">
+            <img src="dice_alt.png" alt="Item 2 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Dice Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('dice.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="heart d.png" alt="Item 3">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Heart Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (heart d.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="heart d.png" alt="Item 3" class="first">
+            <img src="heart_d_alt.png" alt="Item 3 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Heart Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('heart_d.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="heart print.png" alt="Item 4">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Heart print Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (heart print.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="heart print.png" alt="Item 4" class="first">
+            <img src="heart_print_alt.png" alt="Item 4 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Heart print Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('heart_print.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="hustlers dept.png" alt="Item 5">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Hustlers Dept. Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (hustlers dept.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="hustlers dept.png" alt="Item 5" class="first">
+            <img src="hustlers_dept_alt.png" alt="Item 5 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Hustlers Dept. Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('hustlers_dept.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="inhale.png" alt="Item 6">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Inhale / Exhale Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (inhale.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="inhale.png" alt="Item 6" class="first">
+            <img src="inhale_alt.png" alt="Item 6 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Inhale / Exhale Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('inhale.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="mengelara.png" alt="Item 7">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Mengelara Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (mengelara.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="mengelara.png" alt="Item 7" class="first">
+            <img src="mengelara_alt.png" alt="Item 7 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Mengelara Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('mengelara.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="need weed.png" alt="Item 8">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Need Weed Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R549,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (need weed.png, 'White Men Shirt', 'R549,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="need weed.png" alt="Item 8" class="first">
+            <img src="need_weed_alt.png" alt="Item 8 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Need Weed Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R549,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('need_weed.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
+        </div>
 
-            <div class="sale-item">
-                <img src="pazel.png" alt="Item 1">
-                <h2>White Men Shirt</h2>
-                <p>Get this white "Heart Pazel Design" shirt. Limited time offer!</p>
-                <p><strong>Price:</strong> R449,99</p>
-                <form method="post" action="cart.php">
-                    <input type="hidden" name="product" value="Clothing">
-                    <input type="hidden" name="price" value="210">
-                    <button type="submit" name="add_to_cart" onclick="addToCart
-                      (pazel.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-                </form>
-            </div>
+        <div class="sale-item">
+            <img src="pazel.png" alt="Item 9" class="first">
+            <img src="pazel_alt.png" alt="Item 9 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Heart Pazel Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('pazel.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-          <div class="sale-item">
-              <img src="pill.png" alt="Item 1">
-              <h2>White Men Shirt</h2>
-              <p>Get this white "Pill Heart Design" shirt. Limited time offer!</p>
-              <p><strong>Price:</strong> R449,99</p>
-              <form method="post" action="cart.php">
-                  <input type="hidden" name="product" value="Clothing">
-                  <input type="hidden" name="price" value="210">
-                  <button type="submit" name="add_to_cart" onclick="addToCart
-                    (pill.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-              </form>
-          </div>
+        <div class="sale-item">
+            <img src="pill.png" alt="Item 10" class="first">
+            <img src="pill_alt.png" alt="Item 10 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Pill Heart Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('pill.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-          <div class="sale-item">
-              <img src="smiley.png" alt="Item 1">
-              <h2>White Men Shirt</h2>
-              <p>Get this white "Smiley Face Design" shirt. Limited time offer!</p>
-              <p><strong>Price:</strong> R449,99</p>
-              <form method="post" action="cart.php">
-                  <input type="hidden" name="product" value="Clothing">
-                  <input type="hidden" name="price" value="210">
-                  <button type="submit" name="add_to_cart" onclick="addToCart
-                    (smiley.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-              </form>
-          </div>
+        <div class="sale-item">
+            <img src="smiley.png" alt="Item 11" class="first">
+            <img src="smiley_alt.png" alt="Item 11 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Smiley Face Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('smiley.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
 
-          <div class="sale-item">
-              <img src="think.png" alt="Item 1">
-              <h2>White Men Shirt</h2>
-              <p>Get this white "Think Outside The Box Design" shirt. Limited time offer!</p>
-              <p><strong>Price:</strong> R549,99</p>
-              <form method="post" action="cart.php">
-                  <input type="hidden" name="product" value="Clothing">
-                  <input type="hidden" name="price" value="210">
-                  <button type="submit" name="add_to_cart" onclick="addToCart
-                    (think.png, 'White Men Shirt', 'R549,99')">Add to Cart</button>
-              </form>
-          </div>
+        <div class="sale-item">
+            <img src="think.png" alt="Item 12" class="first">
+            <img src="think_alt.png" alt="Item 12 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "Think Outside The Box Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R549,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('think.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
+        </div>
 
-          <div class="sale-item">
-              <img src="u decide.png" alt="Item 1">
-              <h2>White Men Shirt</h2>
-              <p>Get this white "You Decide Design" shirt. Limited time offer!</p>
-              <p><strong>Price:</strong> R449,99</p>
-              <form method="post" action="cart.php">
-                  <input type="hidden" name="product" value="Clothing">
-                  <input type="hidden" name="price" value="210">
-                  <button type="submit" name="add_to_cart" onclick="addToCart
-                    (u decide.png, 'White Men Shirt', 'R449,99')">Add to Cart</button>
-              </form>
-          </div>
-        <!-- Insert other main content here -->
+        <div class="sale-item">
+            <img src="u decide.png" alt="Item 13" class="first">
+            <img src="u_decide_alt.png" alt="Item 13 Alternative" class="second">
+            <h2>White Men Shirt</h2>
+            <p>Get this white "You Decide Design" shirt. Limited time offer!</p>
+            <p><strong>Price: R449,99 </strong></p>
+                <button type="submit" name="add_to_cart" onclick="addToCart
+                  ('u_decide.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -308,60 +272,22 @@
         <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
     </footer>
 
-      <script>
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  <script>
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-          function addToCart(name, price, image) {
-              const product = { name, price, image, quantity: 1 };
-              const existingProductIndex = cart.findIndex(item => item.name === name);
+      function addToCart(name, price, image) {
+          const product = { name, price, image, quantity: 1 };
+          const existingProductIndex = cart.findIndex(item => item.name === name && item.image === image);
 
-              if (existingProductIndex > -1) {
-                  cart[existingProductIndex].quantity += 1;
-              } else {
-                  cart.push(product);
-              }
-
-              localStorage.setItem('cart', JSON.stringify(cart));
-              alert(`${name} has been added to your cart!`);
+          if (existingProductIndex > -1) {
+              cart[existingProductIndex].quantity += 1;
+          } else {
+              cart.push(product);
           }
 
-          function updateQuantity(name, quantity) {
-              const productIndex = cart.findIndex(item => item.name === name);
-              if (productIndex > -1) {
-                  if (quantity <= 0) {
-                      cart.splice(productIndex, 1); // Remove item if quantity is zero or less
-                  } else {
-                      cart[productIndex].quantity = quantity;
-                  }
-                  localStorage.setItem('cart', JSON.stringify(cart));
-                  viewCart();
-              }
-          }
-
-          function removeFromCart(name) {
-              cart = cart.filter(item => item.name !== name);
-              localStorage.setItem('cart', JSON.stringify(cart));
-              viewCart();
-          }
-
-          function viewCart() {
-              const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-              let cartHTML = '<h2>Your Cart</h2><ul>';
-
-              cartItems.forEach(item => {
-                  cartHTML += `
-                      <li>
-                          <img src="${item.image}" alt="${item.name}" width="50">
-                          ${item.name} - $${item.price} x 
-                          <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', this.value)">
-                          <button onclick="removeFromCart('${item.name}')">Remove</button>
-                      </li>`;
-              });
-
-              cartHTML += '</ul>';
-              document.getElementById('cart').innerHTML = cartHTML;
-          }
-      </script>
-      
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${name} has been added to your cart!`);
+      }
+  </script>
 </body>
 </html>
