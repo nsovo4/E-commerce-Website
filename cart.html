@@ -1,120 +1,135 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Cart - NSV DESIGNS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Cart - NSV DESIGNS</title>
+    <link rel="icon" type="image/jpg" href="fav.jpg">
+    <style>
+        /* Base styles same as products.html */
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2222;
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    body {
-      width: 100%;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      scroll-behavior: smooth;
-    }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 20px;
+        }
 
-    header {
-        background-color: #333;
-        color: #fff;
-        padding: 50px 20px;
-    }
+        /* Cart specific styles */
+        .cart-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 20px auto;
+        }
 
-    header h1 {
-        margin: 0;
-        text-align: center;
-    }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 20px;
-      padding: 0;
-      text-align: center;
-    }
+        .cart-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
 
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
+        .cart-item-details {
+            flex-grow: 1;
+            padding: 10px 0;
+        }
 
-    nav ul li a {
-        text-decoration: none;
-        color: #fff;
-    }
+        .cart-item-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-    nav li a.active {
-      color: orange;
-    }
+        .cart-item-price {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
 
-    .main-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+        .cart-item-actions {
+            margin-top: 10px;
+        }
 
-    .sale-item {
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin: 20px;
-        padding: 20px;
-        width: 300px;
-    }
+        .cart-item input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
 
-    .sale-item img {
-        width: 100%;
-        border-radius: 5px;
-    }
+        .cart-item button {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .sale-item h2 {
-        font-size: 20px;
-        margin-top: 10px;
-    }
+        .cart-total {
+            text-align: right;
+            margin: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
 
-    .sale-item p {
-        margin-top: 10px;
-    }
+        nav ul {
+            list-style-type: none;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
 
-    .sale-item button {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-    }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-    .sale-item button:hover {
-        background-color: #45a049;
-    }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
 
-    .container {
-      display: flex;
-      gap: 50px;
-    }
+        nav li a.active {
+            color: orange;
+        }
 
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 5px 0;
-        text-align: center;
-        bottom: 0;
-        width: 100%;
-        position: fixed;
-    }
-
-  </style>
-  
+        .cart-empty {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            background: white;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
 </head>
-
-  <body>
+<body>
+    <!-- Header -->
     <header>
-            <h1>NSV DESIGNS</h1>
-        </div>
+        <h1>Shopping Cart</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -125,56 +140,74 @@
         </nav>
     </header>
 
-    <main id="cart">
-        <!-- Cart items will be displayed here -->
-    </main>
-
-    <footer>
-        <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
-    </footer>
+    <!-- Cart Container -->
+    <div id="cart"></div>
 
     <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        function updateQuantity(name, image, quantity) {
-            const productIndex = cart.findIndex(item => item.name === name && item.image === image);
-            if (productIndex > -1) {
-                if (quantity <= 0) {
-                    cart.splice(productIndex, 1); // Remove item if quantity is zero or less
-                } else {
-                    cart[productIndex].quantity = quantity;
-                }
-                localStorage.setItem('cart', JSON.stringify(cart));
-                viewCart();
-            }
-        }
-
-        function removeFromCart(name, image) {
-            cart = cart.filter(item => item.name !== name || item.image !== image);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            viewCart();
-        }
-
-        function viewCart() {
+        function displayCart() {
             const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartHTML = '<h2>Your Cart</h2><ul>';
+            const cartContainer = document.getElementById('cart');
+            
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <h2>Your cart is empty</h2>
+                        <p>Go to the <a href="products.html">products page</a> to add items to your cart.</p>
+                    </div>`;
+                return;
+            }
+
+            let cartHTML = '<ul class="cart-list">';
+            let total = 0;
 
             cartItems.forEach(item => {
+                // Convert price string to number (remove 'R' and replace ',' with '.')
+                const priceNumber = parseFloat(item.price.replace('R', '').replace(',', '.'));
+                const itemTotal = priceNumber * item.quantity;
+                total += itemTotal;
+
                 cartHTML += `
-                    <li>
-                        <img src="${item.image}" alt="${item.name}" width="50">
-                        ${item.name} - ${item.price} x 
-                        <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.name}', '${item.image}', this.value)">
-                        <button onclick="removeFromCart('${item.name}', '${item.image}')">Remove</button>
+                    <li class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">${item.price}</div>
+                            <div class="cart-item-actions">
+                                <input type="number" 
+                                    value="${item.quantity}" 
+                                    min="1" 
+                                    onchange="updateQuantity('${item.image}', '${item.name}', this.value)">
+                                <button onclick="removeFromCart('${item.image}', '${item.name}')">Remove</button>
+                            </div>
+                        </div>
                     </li>`;
             });
 
             cartHTML += '</ul>';
-            document.getElementById('cart').innerHTML = cartHTML;
+            cartHTML += `<div class="cart-total">Total: R${total.toFixed(2)}</div>`;
+            cartContainer.innerHTML = cartHTML;
         }
 
-        // Call viewCart when the page loads
-        viewCart();
+        function updateQuantity(image, name, newQuantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const index = cart.findIndex(item => item.image === image && item.name === name);
+            
+            if (index > -1) {
+                cart[index].quantity = parseInt(newQuantity);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                displayCart();
+            }
+        }
+
+        function removeFromCart(image, name) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => !(item.image === image && item.name === name));
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        // Call displayCart when the page loads
+        window.onload = displayCart;
     </script>
-  </body>
-  </html>
+</body>
+</html>

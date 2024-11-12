@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Products - NSV DESIGNS</title>
-  
+    <link rel="icon" type="image/jpg" href="fav.jpg">
     <style>
         body {
             width: 100%;
@@ -19,7 +19,7 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 50px 20px;
+            padding: 20px 20px;
         }
 
         header h1 {
@@ -118,6 +118,45 @@
             width: 100%;
             position: fixed;
         }
+
+        .cart-popup {
+            position: fixed;
+            right: -300px; /* Start off-screen */
+            top: 100px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px 0 0 8px;
+            box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .cart-popup.show {
+            right: 0;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-content p {
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        .goto-cart-btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .goto-cart-btn:hover {
+            background: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -134,6 +173,14 @@
         </nav>
     </header>
 
+    <!-- Add this HTML right after your opening <body> tag -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="popup-content">
+            <p>Item added to cart!</p>
+            <a href="cart.html" class="goto-cart-btn">Go to Cart</a>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <div class="main-content">
         <div class="sale-item">
@@ -142,8 +189,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "A spirit learning to be human" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('a_spirit.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('a_spirit.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -152,8 +198,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Dice Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('dice.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('dice.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -162,8 +207,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Heart Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('heart_d.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('heart_d.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -172,8 +216,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Heart print Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('heart_print.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('heart_print.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -182,8 +225,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Hustlers Dept. Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('hustlers_dept.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('hustlers_dept.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -192,8 +234,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Inhale / Exhale Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('inhale.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('inhale.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -202,8 +243,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Mengelara Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('mengelara.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('mengelara.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -212,8 +252,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Need Weed Design" shirt. Limited time offer!</p>
             <p><strong>Price: R549,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('need_weed.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('need_weed.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -222,8 +261,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Heart Pazel Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('pazel.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('pazel.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -232,8 +270,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Pill Heart Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('pill.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('pill.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -242,8 +279,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Smiley Face Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('smiley.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('smiley.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -252,8 +288,7 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "Think Outside The Box Design" shirt. Limited time offer!</p>
             <p><strong>Price: R549,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('think.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('think.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
         </div>
 
         <div class="sale-item">
@@ -262,22 +297,29 @@
             <h2>White Men Shirt</h2>
             <p>Get this white "You Decide Design" shirt. Limited time offer!</p>
             <p><strong>Price: R449,99 </strong></p>
-                <button type="submit" name="add_to_cart" onclick="addToCart
-                  ('u_decide.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
+                <button type="button" onclick="addToCart('u_decide.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 NSV DESIGNS. All rights reserved.</p>
+        <p>&copy; 2024 NSV DEVELOPS. All rights reserved.</p>
     </footer>
 
   <script>
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-      function addToCart(name, price, image) {
-          const product = { name, price, image, quantity: 1 };
-          const existingProductIndex = cart.findIndex(item => item.name === name && item.image === image);
+      function addToCart(image, name, price) {
+          const product = {
+              image: image,
+              name: name,
+              price: price,
+              quantity: 1
+          };
+
+          const existingProductIndex = cart.findIndex(item => 
+              item.name === name && item.image === image
+          );
 
           if (existingProductIndex > -1) {
               cart[existingProductIndex].quantity += 1;
@@ -286,7 +328,15 @@
           }
 
           localStorage.setItem('cart', JSON.stringify(cart));
-          alert(`${name} has been added to your cart!`);
+          
+          // Show popup
+          const popup = document.getElementById('cart-popup');
+          popup.classList.add('show');
+          
+          // Hide popup after 3 seconds
+          setTimeout(() => {
+              popup.classList.remove('show');
+          }, 7000);
       }
   </script>
 </body>

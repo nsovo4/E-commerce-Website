@@ -1,0 +1,54 @@
+declare -gx DENO_TLS_CA_STORE=system
+declare -gx REPLIT_CLI=/nix/store/5ya5zvkq3ai0z30k3csng97nqixzyr0i-pid1-0.0.1/bin/replit
+declare -gx NIX_PROFILES='/nix/var/nix/profiles/default /home/runner/.nix-profile'
+declare -gx GIT_EDITOR=replit-git-editor
+declare -gx PROMPT_DIRTRIM=2
+declare -gx REPLIT_RTLD_LOADER=1
+declare -gx HOSTNAME=5e9ff747654c
+declare -gx REPLIT_SUBCLUSTER=interactive
+declare -gx REPL_LANGUAGE=html
+declare -gx REPLIT_PID1_FLAG_REPLIT_RTLD_LOADER=1
+declare -gx REPL_ID=19a88933-5c48-4b04-81aa-5e68cb996b0a
+declare -gx XDG_DATA_HOME=/home/runner/E-commerce-Website/.local/share
+declare -gx DOCKER_CONFIG=/home/runner/E-commerce-Website/.config/docker
+declare -gx COLORTERM=truecolor
+declare -gx REPLIT_NIX_CHANNEL=stable-23_11
+declare -gx GIT_ASKPASS=replit-git-askpass
+declare -gx REPLIT_PID1_VERSION=0.0.0-15fbfc8
+declare -gx REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+declare -gx __EGL_VENDOR_LIBRARY_FILENAMES=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/share/glvnd/egl_vendor.d/50_mesa.json
+declare -gx NIX_PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+declare -gx REPLIT_ENVIRONMENT=production
+declare -gx NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+declare -gx HOME=/home/runner
+declare -gx REPLIT_RIPPKGS_INDICES=/nix/store/73awzgwmrga8y0dl84cp30h40965wyk5-rippkgs-indices
+declare -gx DISPLAY=:0
+declare -gx REPL_PUBKEYS='{"crosis-ci":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:1":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","crosis-ci:latest":"7YlpcYh82oR9NSTtSYtR5jDL4onNzCGJGq6b+9CuZII=","prod":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:1":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","prod:2":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:3":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:4":"8uGN+vfszlnV93/HCSHlVLG0xddMlPkir1Ni4JKT4+w=","prod:5":"9+MCOSHQSQlcodXoot8dC8NLhc862nLkx1/VMsbY2h8=","prod:latest":"tGsjlu/BJvWTgvMaX7acuUb7AO1dXOrRiuk7y083RFE=","vault-goval-token":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:1":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E=","vault-goval-token:latest":"D5jJoMx1Ml54HM92NLgXl+MzptwDqbSsfyFG6f52g9E="}'
+declare -gx REPLIT_PID1_FLAG_NIXMODULES_BEFORE_REPLIT_NIX=1
+declare -gx REPLIT_DEV_DOMAIN=19a88933-5c48-4b04-81aa-5e68cb996b0a-00-1kaha99po4ooq.sisko.replit.dev
+declare -gx NIXPKGS_ALLOW_UNFREE=1
+declare -gx DIRENV_CONFIG=/etc/direnv
+declare -gx REPLIT_BASHRC=/nix/store/vxzp0jk1x0l6w6v1xhq7fi9rrw2jf2zj-replit-bashrc/bashrc
+declare -gx USER=runner
+declare -gx LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+declare -gx LIBGL_DRIVERS_PATH=/nix/store/zxhjnh2d440bhli0zck18s10hcq07qpp-mesa-24.2.2-drivers/lib/dri
+declare -gx REPLIT_DB_URL=https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE3Mjg2ODc4MjEsImlhdCI6MTcyODU3NjIyMSwiZGF0YWJhc2VfaWQiOiIxOWE4ODkzMy01YzQ4LTRiMDQtODFhYS01ZTY4Y2I5OTZiMGEifQ.2u5K9GZz2hCv1vjMAyea0bgEZQF0S4H56WpUMDdh7S_OhxTRA076v18IYK0AYIOcoQ92iYshL-M3NuD59VabXw
+read -r _new_path <<< "/nix/store/shqpigm7mskykmyfhh5399igr2qyykb2-pid1/bin:/nix/store/sg5njaa6xrakr36qy5ja90yks4k6c19y-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+#PATH=/nix/store/shqpigm7mskykmyfhh5399igr2qyykb2-pid1/bin:/nix/store/sg5njaa6xrakr36qy5ja90yks4k6c19y-replit-runtime-path/bin:/home/runner/.nix-profile/bin:/home/runner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+if [ -e "/run/replit/env/last" ]; then read -r _last_path < <(\grep '^#PATH=' /run/replit/env/last | cut -f 2 -d =); fi
+_user_components="$(\tr : $'\n' <<< "${PATH:-}" |\grep -xv -f <(\tr : $'\n' <<< "${_last_path}") |\tr $'\n' :)"
+declare -gx PATH="${_user_components}${_new_path}"
+declare -gx REPL_IDENTITY=v2.public.Q2lReE9XRTRPRGt6TXkwMVl6UTRMVFJpTURRdE9ERmhZUzAxWlRZNFkySTVPVFppTUdFU0IyMXVjMjkyYnpJYUVrVXRZMjl0YldWeVkyVXRWMlZpYzJsMFpTSWtNVGxoT0RnNU16TXROV00wT0MwMFlqQTBMVGd4WVdFdE5XVTJPR05pT1RrMllqQmhPS3JUenc5YUZBb0ZjMmx6YTI4U0MybHVkR1Z5WVdOMGFYWmxU3rhI8Q0ayINzCAOx08pycogSeu_sqKhNu3YnfcD6x4ooshCI0ZPaqVxAgOLbtr_MCi8Mmzc7CkEtK1wEVV8E.R0FFaUJtTnZibTFoYmhLUkNIWXlMbkIxWW14cFl5NVJNbVF6VTFod01sWXlXakZSVm14U1lWWkNVV1JJVmpOU1ZrNUZVVmRzYTA1dVJteE9SVXB2VVhwSk5XUlVTVE5SVmtwMlVUQmtRbFpYUmt0YU1qbHlWRlpTYzJGRk9VVmFlbFpPWldzeE1GUnNaRTVOUlRsRVRVUkNXbUZyUlhkVVJsSnVaVVpzV0ZKWVVrOVdNVlY1VkRCa1QyRlZPVlZoZWtwYVlXdEtiMUl5WkhKVk1FbDVUVmhXYWsxcWEzbFpibkJLV1ZWS1ZXRllSWGRQUkdoUlVqSmthbUZWU2xsVWJrSnFUVzVTTWxJeVkzZGpWVTE1WWtoV2ExSXhXalZYVm1SUFRVZEdXVmR0ZUVwaGJGcDVWRmRyTVdReVVsaFRiazVvVmpBeE1WVlhOVk5XUlRWR1ZXMDVVazB6UWxsWGJUVktUVzFLYzJOR2NGZFdNMmhZVmtWa2JrMXNTWGRhUlhSclRVUldVMVl5TVhkTmJFcHpVMnBPVm1KRWJIZFpiWFJoWVVkS1ZsZHJNVkpWVkRBNWFFUTRWRzk2TTFNeFN6VlJPR3BzYkZSUlEwNVVUbVZyY1ZoTVNpMUtRM2M0YlRWMmRubFJkbmxuZERkb2VFWnlNMEZtZDJoTlNGZ3lkVzl1UVVsa1kzaEtjMkZFTWpKSFEyUjNhbVl3VFY4MlpUVm5RMEV1VWpCR1JtRlZTblJVYmxwcFlsUkdiMWx0YUUxWmEwWjFWMWhzVFdKclNYaFhWekUwWTBac05VNVdTazVpVmtreVZsUkdhMDFIVm5SVGJGcFVZbTVDVjFadE1UUlZNVkp5VlcxR1RsWnVRbGRWTW5SUFZrWmFXV0ZGVmxabGEwcHlWV3BCTVZOV1JuSlRiRnBPVW14d1UxWnRjRTlaVjFKWFlqTm9VMkpYYUZOV2FrcHZaRlpXV0dSSGRHbGlSVFZZV1d0V1QxWnRTbFZpUlZaV1lXdEtTRnBIZUhOV2JFcDFVbXhLVjFaWVFrcFdNbkJEWXpGa2MxSnNhR2hUUm5CVFZGVmtVMUV4V2tkYVJXUlNZbFZhU1ZkclZYaFZNREYwVld0MFYwMVdXbFJWVkVwS1pERlNjbUZHU2xkaE1YQjJWbFphYTJJeVNuTlVia3BwVTBWYVdGbHRkSGRVTVd4WFZXeGtUazFZUWtoWGExWXdZV3N4Y2xkc2JGZFNiV2hZVmtSR1lXUkhWa2xqUm1SWFlsWktTVlpHVWt0VU1rMTVVMnBhVm1GNmJGaFVWM2hMWWpGWmVVMVVVbFJOYTFwSFZGWldhMVpIU2taWGJGcGFWbnBGTUZkV1duTk9iRVpWVW0xd2FWSllRalpXUkVaWFdWZEZlVk5zYkZaV1JWcFhXV3RhWVdOc2NFaGxSVnBzVW01Q1JsWXlNWGRoUjBWNFkwYzVWMkZyV2xSVmVrWk9aVVphYzFOc1JsZFNSVW96VmpKMFlWZHRUblJqUlRGUVYwVTBlbHBGVmxwT1ZuQkZVbGhTYVdKVVZsRlVNR1JoVlcxS1dHRkVTbFJTVm5CNFZtdFdjbVJIVWtWaFJYQnBZbFp3VVZkRVNYaFdWVEYwV1hwU2FsZElRa1pWYTJSV1RrWmFSV0pHVW1oTlZrbzJWMjE0YjJKWFZuSmlla0pZVmxVeE5sZHRjM2RsYkdSV1RsaEtWRlpIVWxsWFYydDNUbFpLY2xWdE9VOWhWRVpNVkdwSk5WSkZlSE5UV0dSVFlURndiMVpzVm5kTlJscElUbGRHYUZZd2NGWlZiVEExVjIxS1dGVnFTbFpoYTNCUVZURmFUMlJXWkhSU2JFNVRaVzFuTUE9PQ
+declare -gx REPL_SLUG=E-commerce-Website
+declare -gx XDG_CONFIG_HOME=/home/runner/E-commerce-Website/.config
+declare -gx REPL_OWNER_ID=32762282
+declare -gx NIX_PATH=nixpkgs=/home/runner/.nix-defexpr/channels/nixpkgs-stable-23_11:/home/runner/.nix-defexpr/channels
+declare -gx LANG=en_US.UTF-8
+declare -gx SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+declare -gx REPL_IMAGE=gcr.io/marine-cycle-160323/nix:bf8590a3e2f0a8b70b7ca175eeed9074dffbfca9
+declare -gx REPLIT_CLUSTER=sisko
+declare -gx REPL_IDENTITY_KEY=k2.secret.9LUTMpmM2zPO-ot7edvgBLlVWFWEWI3H6CHFni2qrlUG1LgOELNZ-vqdlhSVUuHoYYnA1BmO8VHBH-KcVqYUsA
+declare -gx REPL_OWNER=mnsovo2
+declare -gx REPL_HOME=/home/runner/E-commerce-Website
+declare -gx XDG_CACHE_HOME=/home/runner/E-commerce-Website/.cache
+declare -gx REPLIT_LD_AUDIT=/nix/store/n5x1kgbz8zjh63ymsijbislyi1n1hir6-replit_rtld_loader-1/rtld_loader.so
