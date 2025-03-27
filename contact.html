@@ -11,6 +11,39 @@
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
+        @media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info, .contact-form {
+        flex: none;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 0 10px;
+    }
+
+    .contact-info, .contact-form {
+        padding: 20px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-item i {
+        margin-bottom: 10px;
+    }
+}
+
     body {
       width: 100%;
       overflow-x: hidden;
@@ -81,6 +114,7 @@
         display: flex;
         gap: 40px;
         flex-wrap: wrap;
+        box-sizing: border-box;
     }
 
     .contact-info, .contact-form {
@@ -90,6 +124,7 @@
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-sizing: border-box;
     }
 
     .info-item {
@@ -137,6 +172,7 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 16px;
+        box-sizing: border-box;
     }
 
     .form-group textarea {
@@ -158,42 +194,7 @@
         background-color: #45a049;
     }
 
-    @media (max-width: 768px) {
-        .contact-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .contact-info, .contact-form {
-            flex: none;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        .info-item {
-            justify-content: center;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .contact-container {
-            padding: 0 10px;
-        }
-
-        .contact-info, .contact-form {
-            padding: 20px;
-        }
-
-        .info-item {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .info-item i {
-            margin-bottom: 10px;
-        }
-    }
+    
     
   </style>
 
