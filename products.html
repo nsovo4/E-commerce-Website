@@ -1,343 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>Products - NSV DESIGNS</title>
-    <link rel="icon" type="image/jpg" href="fav.jpg">
+    <link rel="icon" type="image/jpg" href="fav.jpg" />
+
     <style>
-        body {
-            width: 100%;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #2222;
-            scroll-behavior: smooth;
+      @media (max-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(3, 1fr);
         }
+      }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 20px;
+      @media (max-width: 900px) {
+        .product-grid {
+          grid-template-columns: repeat(2, 1fr);
         }
+      }
 
-        header h1 {
-            margin: 0;
-            text-align: center;
+      @media (max-width: 600px) {
+        .product-grid {
+          grid-template-columns: 1fr;
         }
+      }
 
-        nav ul {
-            list-style-type: none;
-            margin: 20px;
-            padding: 0;
-            text-align: center;
-        }
+      body {
+        width: 100%;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+        scroll-behavior: smooth;
+      }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 20px;
+      }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
+      header h1 {
+        margin: 0;
+        text-align: center;
+      }
 
-        nav li a.active {
-            color: orange;
-        }
+      nav ul {
+        list-style-type: none;
+        margin: 20px;
+        padding: 0;
+        text-align: center;
+      }
 
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
 
-        .sale-item {
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-            padding: 20px;
-            width: 300px;
-            position: relative;
-            overflow: hidden;
-        }
+      nav ul li a {
+        text-decoration: none;
+        color: #fff;
+      }
 
-        .sale-item img {
-            width: 100%;
-            border-radius: 5px;
-            transition: opacity 0.5s ease-in-out;
-        }
+      nav li a.active {
+        color: orange;
+      }
 
-        .sale-item img.second {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
+      .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-        .sale-item:hover img.first {
-            opacity: 0;
-        }
+      .sale-item {
+        background-color: #ffffff;
+        border-radius: 15px;
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        position: relative;
+        overflow: visible;
+      }
 
-        .sale-item:hover img.second {
-            opacity: 1;
-        }
+      .sale-item img {
+        width: 100%;
+        border-radius: 5px;
+        transition: opacity 0.5s ease-in-out;
+      }
 
-        .sale-item h2 {
-            font-size: 20px;
-            margin-top: 10px;
-        }
+      .sale-item img.second {
+        position: absolute;
+        top: -5px;
+        left: 0;
+        opacity: 0;
+      }
 
-        .sale-item p {
-            margin-top: 10px;
-        }
+      .sale-item:hover img.first {
+        opacity: 0;
+      }
 
-        .sale-item button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+      .sale-item:hover img.second {
+        opacity: 1;
+      }
 
-        .sale-item button:hover {
-            background-color: #45a049;
-        }
+      .sale-item h2 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 5px 0;
-            text-align: center;
-            bottom: 0;
-            width: 100%;
-            position: fixed;
-        }
+      .sale-item p {
+        margin-top: 10px;
+      }
 
-        .cart-popup {
-            position: fixed;
-            right: -300px; /* Start off-screen */
-            top: 100px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px 0 0 8px;
-            box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
-            transition: right 0.3s ease-in-out;
-            z-index: 1000;
-        }
+      .sale-item button {
+        background-color: #31cc36;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
 
-        .cart-popup.show {
-            right: 0;
-        }
+      .sale-item button:hover {
+        background-color: #45a049;
+      }
 
-        .popup-content {
-            text-align: center;
-        }
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 1px 0;
+        text-align: center;
+        bottom: 0;
+        width: 100%;
+        position: relative;
+      }
 
-        .popup-content p {
-            margin: 0 0 15px 0;
-            font-weight: bold;
-        }
+      .cart-popup {
+        position: fixed;
+        right: -300px;
+        top: 100px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+      }
 
-        .goto-cart-btn {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
+      .cart-popup.show {
+        right: 0;
+      }
 
-        .goto-cart-btn:hover {
-            background: #45a049;
-        }
+      .popup-content {
+        text-align: center;
+      }
+
+      .popup-content p {
+        margin: 0 0 15px 0;
+        font-weight: bold;
+      }
+
+      .goto-cart-btn {
+        display: inline-block;
+        background: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .goto-cart-btn:hover {
+        background: #45a049;
+      }
     </style>
-</head>
-<body>
-    <!-- Header -->
+  </head>
+  <body>
     <header>
-        <h1>Clothing</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="products.html">Products</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+      <h1>Clothing</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="products.html">Products</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Add this HTML right after your opening <body> tag -->
     <div id="cart-popup" class="cart-popup">
-        <div class="popup-content">
-            <p>Item added to cart!</p>
-            <a href="cart.html" class="goto-cart-btn">Go to Cart</a>
-        </div>
+      <div class="popup-content">
+        <p>Item added to cart!</p>
+        <a href="cart.html" class="goto-cart-btn">Go to Cart</a>
+      </div>
     </div>
 
-    <!-- Main Content -->
     <div class="main-content">
-        <div class="sale-item">
-            <img src="a spirit.png" alt="Item 1" class="first">
-            <img src="a_spirit_alt.png" alt="Item 1 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "A spirit learning to be human" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('a_spirit.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="a spirit.png" alt="Item 1" class="first" />
+        <img src="a_spirit_alt.png" alt="Item 1 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>
+          Get this white "A spirit learning to be human" shirt. Limited time
+          offer!
+        </p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('a_spirit.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="dice.png" alt="Item 2" class="first">
-            <img src="dice_alt.png" alt="Item 2 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Dice Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('dice.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="dice.png" alt="Item 2" class="first" />
+        <img src="dice_alt.png" alt="Item 2 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Dice Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('dice.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="heart d.png" alt="Item 3" class="first">
-            <img src="heart_d_alt.png" alt="Item 3 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Heart Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('heart_d.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="heart d.png" alt="Item 3" class="first" />
+        <img src="heart_d_alt.png" alt="Item 3 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Heart Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('heart_d.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="heart print.png" alt="Item 4" class="first">
-            <img src="heart_print_alt.png" alt="Item 4 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Heart print Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('heart_print.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="heart print.png" alt="Item 4" class="first" />
+        <img
+          src="heart_print_alt.png"
+          alt="Item 4 Alternative"
+          class="second"
+        />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Heart print Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('heart_print.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="hustlers dept.png" alt="Item 5" class="first">
-            <img src="hustlers_dept_alt.png" alt="Item 5 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Hustlers Dept. Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('hustlers_dept.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="hustlers dept.png" alt="Item 5" class="first" />
+        <img
+          src="hustlers_dept_alt.png"
+          alt="Item 5 Alternative"
+          class="second"
+        />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Hustlers Dept. Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('hustlers_dept.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="inhale.png" alt="Item 6" class="first">
-            <img src="inhale_alt.png" alt="Item 6 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Inhale / Exhale Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('inhale.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="inhale.png" alt="Item 6" class="first" />
+        <img src="inhale_alt.png" alt="Item 6 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>
+          Get this white "Inhale / Exhale Design" shirt. Limited time offer!
+        </p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('inhale.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="mengelara.png" alt="Item 7" class="first">
-            <img src="mengelara_alt.png" alt="Item 7 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Mengelara Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('mengelara.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="mengelara.png" alt="Item 7" class="first" />
+        <img src="mengelara_alt.png" alt="Item 7 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Mengelara Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('mengelara.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="need weed.png" alt="Item 8" class="first">
-            <img src="need_weed_alt.png" alt="Item 8 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Need Weed Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R549,99 </strong></p>
-                <button type="button" onclick="addToCart('need_weed.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="need weed.png" alt="Item 8" class="first" />
+        <img src="need_weed_alt.png" alt="Item 8 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Need Weed Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R549,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('need_weed.png', 'White Men Shirt', 'R549,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="pazel.png" alt="Item 9" class="first">
-            <img src="pazel_alt.png" alt="Item 9 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Heart Pazel Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('pazel.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="pazel.png" alt="Item 9" class="first" />
+        <img src="pazel_alt.png" alt="Item 9 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Heart Pazel Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('pazel.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="pill.png" alt="Item 10" class="first">
-            <img src="pill_alt.png" alt="Item 10 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Pill Heart Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('pill.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="pill.png" alt="Item 10" class="first" />
+        <img src="pill_alt.png" alt="Item 10 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Pill Heart Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('pill.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="smiley.png" alt="Item 11" class="first">
-            <img src="smiley_alt.png" alt="Item 11 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Smiley Face Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('smiley.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="smiley.png" alt="Item 11" class="first" />
+        <img src="smiley_alt.png" alt="Item 11 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "Smiley Face Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('smiley.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="think.png" alt="Item 12" class="first">
-            <img src="think_alt.png" alt="Item 12 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "Think Outside The Box Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R549,99 </strong></p>
-                <button type="button" onclick="addToCart('think.png', 'White Men Shirt', 'R549,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="think.png" alt="Item 12" class="first" />
+        <img src="think_alt.png" alt="Item 12 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>
+          Get this white "Think Outside The Box Design" shirt. Limited time
+          offer!
+        </p>
+        <p><strong>Price: R549,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('think.png', 'White Men Shirt', 'R549,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
 
-        <div class="sale-item">
-            <img src="u decide.png" alt="Item 13" class="first">
-            <img src="u_decide_alt.png" alt="Item 13 Alternative" class="second">
-            <h2>White Men Shirt</h2>
-            <p>Get this white "You Decide Design" shirt. Limited time offer!</p>
-            <p><strong>Price: R449,99 </strong></p>
-                <button type="button" onclick="addToCart('u_decide.png', 'White Men Shirt', 'R449,99')">Add to Cart</button>
-        </div>
+      <div class="sale-item">
+        <img src="u decide.png" alt="Item 13" class="first" />
+        <img src="u_decide_alt.png" alt="Item 13 Alternative" class="second" />
+        <h2>White Men Shirt</h2>
+        <p>Get this white "You Decide Design" shirt. Limited time offer!</p>
+        <p><strong>Price: R449,99 </strong></p>
+        <button
+          type="button"
+          onclick="addToCart('u_decide.png', 'White Men Shirt', 'R449,99')"
+        >
+          Add to Cart
+        </button>
+      </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 NSV DEVELOPS. All rights reserved.</p>
+      <p>&copy; 2024 NSV DEVELOPS. All rights reserved.</p>
     </footer>
 
-  <script>
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
       function addToCart(image, name, price) {
-          const product = {
-              image: image,
-              name: name,
-              price: price,
-              quantity: 1
-          };
+        const product = {
+          image: image,
+          name: name,
+          price: price,
+          quantity: 1,
+        };
 
-          const existingProductIndex = cart.findIndex(item => 
-              item.name === name && item.image === image
-          );
+        const existingProductIndex = cart.findIndex(
+          (item) => item.name === name && item.image === image
+        );
 
-          if (existingProductIndex > -1) {
-              cart[existingProductIndex].quantity += 1;
-          } else {
-              cart.push(product);
-          }
+        if (existingProductIndex > -1) {
+          cart[existingProductIndex].quantity += 1;
+        } else {
+          cart.push(product);
+        }
 
-          localStorage.setItem('cart', JSON.stringify(cart));
-          
-          // Show popup
-          const popup = document.getElementById('cart-popup');
-          popup.classList.add('show');
-          
-          // Hide popup after 3 seconds
-          setTimeout(() => {
-              popup.classList.remove('show');
-          }, 7000);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Show popup
+        const popup = document.getElementById("cart-popup");
+        popup.classList.add("show");
+
+        // Hide popup after 3 seconds
+        setTimeout(() => {
+          popup.classList.remove("show");
+        }, 7000);
       }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -6,7 +6,7 @@
     <title>Cart - NSV DESIGNS</title>
     <link rel="icon" type="image/jpg" href="fav.jpg">
     <style>
-        /* Base styles same as products.html */
+
         body {
             width: 100%;
             overflow-x: hidden;
@@ -23,7 +23,11 @@
             padding: 20px 20px;
         }
 
-        /* Cart specific styles */
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
         .cart-list {
             list-style: none;
             padding: 0;
@@ -124,10 +128,20 @@
             margin: 20px auto;
             max-width: 800px;
         }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1px 0;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            position: relative;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <h1>Shopping Cart</h1>
         <nav>
@@ -139,6 +153,10 @@
             </ul>
         </nav>
     </header>
+
+    <footer>
+        <p>&copy; 2024 NSV DEVELOPS. All rights reserved.</p>
+    </footer>
 
     <!-- Cart Container -->
     <div id="cart"></div>
@@ -206,7 +224,6 @@
             displayCart();
         }
 
-        // Call displayCart when the page loads
         window.onload = displayCart;
     </script>
 </body>
