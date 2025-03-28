@@ -9,86 +9,82 @@
         
       @media (max-width: 768px) {
         .cart-list {
-          padding: 0 10px; /* Add padding for smaller screens */
+          padding: 0 10px; 
         }
 
         .cart-item {
-          flex-direction: column; /* Stack items vertically */
-          align-items: flex-start; /* Align items to the start */
-          padding: 15px; /* Reduce padding */
+          flex-direction: column; 
+          align-items: flex-start; 
+          padding: 15px; 
         }
 
         .cart-item img {
-          width: 100%; /* Make the image take full width */
-          height: auto; /* Maintain aspect ratio */
-          margin-bottom: 15px; /* Add spacing below the image */
+          width: 100%; 
+          height: auto; 
+          margin-bottom: 15px; 
         }
 
         .cart-item-details {
-          width: 100%; /* Make details take full width */
+          width: 100%; 
         }
 
         .cart-item-actions {
-          margin-top: 10px; /* Add spacing above actions */
+          margin-top: 10px; 
           display: flex;
-          flex-direction: column; /* Stack actions vertically */
+          flex-direction: column; 
         }
 
         .cart-item-actions input[type="number"] {
-          margin-bottom: 10px; /* Add spacing below the input */
-          width: 100%; /* Make input take full width */
+          margin-bottom: 10px; 
+          width: 100%; 
         }
 
         .cart-item-actions button {
-          width: 100%; /* Make button take full width */
+          width: 100%; 
         }
 
         .cart-total {
-          text-align: center; /* Center align the total */
-          margin: 20px 0; /* Add spacing above and below */
+          text-align: center; 
+          margin: 20px 0; 
         }
       }
 
       @media (max-width: 480px) {
         .cart-item {
-          padding: 10px; /* Further reduce padding */
+          padding: 10px; 
         }
 
         .cart-item img {
-          width: 100%; /* Ensure image fits smaller screens */
+          width: 100%; 
         }
 
         .cart-item-name {
-          font-size: 18px; /* Adjust font size for smaller screens */
+          font-size: 18px; 
         }
 
         .cart-item-price {
-          font-size: 14px; /* Adjust font size for smaller screens */
+          font-size: 14px; 
         }
 
         .cart-item-actions input[type="number"] {
-          font-size: 14px; /* Adjust input font size */
+          font-size: 14px; 
         }
 
         .cart-item-actions button {
-          font-size: 14px; /* Adjust button font size */
+          font-size: 14px; 
         }
 
         .cart-total {
-          font-size: 1em; /* Adjust total font size */
+          font-size: 1em; 
         }
       }
 
-      html,
       body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-      }
-
-      body {
+        width: 100%;
+        overflow-x: hidden;
         font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
         background-color: #000000;
         scroll-behavior: smooth;
       }
@@ -203,21 +199,6 @@
         margin: 20px auto;
         max-width: 800px;
       }
-
-      #cart {
-        flex: 1;
-        padding-bottom: 20px;
-      }
-
-      footer {
-        background-color: #333;
-        color: #fff;
-        padding: 1px 0;
-        text-align: center;
-        width: 100%;
-        bottom: 0;
-        position: fixed;
-      }
     </style>
   </head>
   <body>
@@ -232,10 +213,6 @@
         </ul>
       </nav>
     </header>
-
-    <footer>
-      <p>&copy; 2024 NSV DEVELOPS. All rights reserved.</p>
-    </footer>
 
     <!-- Cart Container -->
     <div id="cart"></div>
@@ -264,7 +241,7 @@
               typeof item.price === "string"
                 ? item.price
                 : item.price.toString();
-            const priceNumber = parseFloat(priceString.replace("R", "")); // Remove "R" and parse the number
+            const priceNumber = parseFloat(priceString.replace("R", "")); 
             if (isNaN(priceNumber)) {
               console.error(`Invalid price format for item: ${item.name}`);
               return;
