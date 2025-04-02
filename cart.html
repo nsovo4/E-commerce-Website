@@ -178,6 +178,9 @@
         font-size: 1.2em;
         font-weight: bold;
         color: #fff;
+        align-items: center;
+        justify-content: center;
+        display: flex;
       }
 
       nav ul {
@@ -210,6 +213,24 @@
         margin: 20px auto;
         max-width: 800px;
       }
+      .checkout-btn {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+      }
+
+      .checkout-btn:hover {
+        background-color: #218838;
+      }
     </style>
   </head>
   <body>
@@ -238,7 +259,7 @@
             cartContainer.innerHTML = `
                 <div class="cart-empty">
                     <h2>Your cart is empty</h2>
-                    <p>Go to the <a href="products.html">products page</a> to add items to your cart.</p>
+                    <p>add items to your cart.</p>
                     <button onclick="window.location.href='products.html'" class="btn">Shop Now</button>
                 </div>`;
             return;
@@ -278,9 +299,8 @@
           });
 
           cartHTML += "</ul>";
-          cartHTML += `<div class="cart-total">Total: R${total.toFixed(
-            2
-          )}</div>`;
+          cartHTML += `<div class="cart-total">Total: R${total.toFixed(2)}</div>`;
+          cartHTML += `<button onclick="window.location.href=''" class="checkout-btn">Proceed to Payment</button>`;
           cartContainer.innerHTML = cartHTML;
         } catch (error) {
           console.error("Error displaying cart:", error);
